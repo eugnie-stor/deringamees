@@ -40,7 +40,7 @@
             padding: 15px;
             position: fixed;
             width: 100%;
-            top: 80px;
+            top: 80px; /* Header'ın altında */
             z-index: 1000;
             transition: all 0.3s ease;
             border-bottom: 2px solid #ff6600;
@@ -65,8 +65,9 @@
         }
         .search-bar {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 140px; /* Navbar'ın altında */
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -78,7 +79,7 @@
             background: #1e1e1e;
             color: white;
             font-size: 16px;
-            width: 200px;
+            width: 300px;
             transition: all 0.3s ease;
         }
         .search-bar input:focus {
@@ -181,6 +182,7 @@
             animation: fadeIn 2s ease-in-out;
             position: relative;
             overflow: hidden;
+            margin-top: 200px; /* Header + Navbar + Search bar yüksekliği */
         }
         .hero::before {
             content: '';
@@ -352,10 +354,9 @@
     </style>
 </head>
 <body>
-    <div class="search-bar">
-        <input type="text" placeholder="Ara...">
-        <button type="submit">Ara</button>
-    </div>
+    <header>
+        Derin Studios
+    </header>
     <nav>
         <a href="#" class="active">Ana Sayfa</a>
         <a href="#oyunlar">Oyunlar</a>
@@ -364,6 +365,10 @@
         <a href="#blog">Blog</a>
         <a href="#galeri">Galeri</a>
     </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Ara...">
+        <button type="submit">Ara</button>
+    </div>
     
     <div class="hero">
         <h1>Derin Studios</h1>
