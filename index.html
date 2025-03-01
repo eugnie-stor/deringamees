@@ -232,15 +232,50 @@
             font-size: 14px;
             box-shadow: 0px -4px 10px rgba(255, 255, 255, 0.1);
         }
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(34, 34, 34, 0.95);
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .top-bar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6600;
+        }
+        .top-bar .social-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        .top-bar .social-links a:hover {
+            color: #ff6600;
+        }
     </style>
 </head>
 <body>
-    <header>Derin Studios</header>
+    <div class="top-bar">
+        <div class="logo">Derin Studios</div>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
     <nav>
         <a href="#" class="active">Ana Sayfa</a>
         <a href="#oyunlar">Oyunlar</a>
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#iletisim">İletişim</a>
+        <a href="#blog">Blog</a>
+        <a href="#galeri">Galeri</a>
     </nav>
     
     <div class="hero">
