@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derin Studios - Korku Oyunları</title>
+    <title>Derin Studios</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -129,33 +129,41 @@
         .game-card img:hover {
             transform: scale(1.1);
         }
-        .about p, .contact p {
-            font-size: 18px;
-            margin-top: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+        .about {
+            position: relative;
+            overflow: hidden;
+        }
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('about-bg.jpg') center/cover;
+            opacity: 0.2;
+            z-index: -1;
         }
         .about-content {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .about-content img {
-            width: 300px;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(17, 17, 17, 0.8);
             border-radius: 10px;
-            box-shadow: 0px 0px 20px rgba(255, 165, 0, 0.5);
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            box-shadow: 0px 0px 20px rgba(255, 165, 0, 0.3);
         }
         .about-content p {
-            text-align: left;
-            max-width: 500px;
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: center;
+        }
+        .about-content p span {
+            color: #ff6600;
+            font-weight: bold;
         }
         .contact-form {
             display: flex;
@@ -212,7 +220,7 @@
         <a href="#iletisim">İletişim</a>
     </nav>
     
-    <div class="hero">Derin Studios - Korku Oyunları</div>
+    <div class="hero">Derin Studios</div>
     
     <section class="game-showcase section" id="oyunlar">
         <h2>Oyunlarımız</h2>
@@ -233,8 +241,8 @@
     <section class="about section" id="hakkimizda">
         <h2>Hakkımızda</h2>
         <div class="about-content">
-            <img src="about.jpg" alt="Hakkımızda">
-            <p>Derin Studios, yenilikçi ve sürükleyici korku oyunları geliştiren bağımsız bir oyun stüdyosudur. Amacımız, oyunculara unutulmaz deneyimler sunmak ve onları korku dolu bir dünyaya davet etmektir. Ekibimiz, tutkulu ve deneyimli geliştiricilerden oluşmaktadır. Her bir oyunumuz, detaylı bir şekilde planlanır ve oyuncuların beklentilerini aşmak için özenle hazırlanır.</p>
+            <p><span>Derin Studios</span>, bağımsız bir oyun geliştirme stüdyosu olarak, oyunculara unutulmaz deneyimler sunmayı hedefliyor. Amacımız, yaratıcı ve sürükleyici oyunlarla sizi farklı dünyalara götürmek. Ekibimiz, tutkulu ve deneyimli geliştiricilerden oluşuyor. Her bir projemiz, detaylı bir şekilde planlanır ve oyuncuların beklentilerini aşmak için özenle hazırlanır.</p>
+            <p>Yenilikçi fikirlerimiz ve oyuncu odaklı yaklaşımımızla, sizi her zaman şaşırtmayı ve eğlendirmeyi amaçlıyoruz. Bize katılın ve maceraya ortak olun!</p>
         </div>
     </section>
     
