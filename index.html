@@ -24,6 +24,7 @@
             text-align: center;
             font-size: 32px;
             font-weight: bold;
+            letter-spacing: 2px;
             position: fixed;
             width: 100%;
             top: 0;
@@ -41,6 +42,7 @@
             width: 100%;
             top: 80px;
             z-index: 1000;
+            transition: all 0.3s ease;
         }
         nav a {
             color: white;
@@ -70,49 +72,50 @@
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .game-showcase {
-            text-align: center;
+        .section {
             padding: 80px 20px;
-            background: #111;
-        }
-        .game-card {
-            background: #1e1e1e;
-            width: 320px;
-            padding: 20px;
-            border-radius: 10px;
             text-align: center;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            overflow: hidden;
-        }
-        .game-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 25px rgba(255, 165, 0, 0.7);
         }
         .about, .contact {
-            text-align: center;
-            padding: 80px 20px;
-            background: #222;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            background: #111;
         }
-        .about.visible, .contact.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .about h2, .contact h2 {
+            font-size: 36px;
+            color: #ff6600;
         }
-        .contact form input, .contact form textarea {
-            width: 80%;
+        .about-content, .contact-content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        }
+        .contact-form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
             padding: 10px;
-            margin: 10px 0;
             border-radius: 5px;
             border: none;
             outline: none;
-            font-size: 16px;
-            transition: all 0.3s ease-in-out;
         }
-        .contact form input:focus, .contact form textarea:focus {
-            box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.7);
+        .contact-form button {
+            padding: 10px;
+            border: none;
+            background: #ff6600;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .contact-form button:hover {
+            background: #cc5200;
         }
         footer {
             text-align: center;
@@ -120,6 +123,7 @@
             background: #1e1e1e;
             margin-top: 40px;
             font-size: 14px;
+            box-shadow: 0px -4px 10px rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
@@ -127,40 +131,33 @@
     <header>Derin Studios</header>
     <nav>
         <a href="#">Ana Sayfa</a>
-        <a href="#oyunlar">Oyunlar</a>
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#iletisim">İletişim</a>
     </nav>
+    
     <div class="hero">Derin Studios - Korku Oyunları</div>
-    <section class="game-showcase" id="oyunlar">
-        <h2>Oyunlarımız</h2>
-        <div class="game-card">
-            <h3>Karanlık Koridor</h3>
-            <p>Psikolojik gerilim ve korku dolu bir atmosfer.</p>
+    
+    <section class="about section" id="hakkimizda">
+        <h2>Hakkımızda</h2>
+        <div class="about-content">
+            <p>Derin Studios, korku türünde yenilikçi oyunlar geliştiren bağımsız bir stüdyodur. Gerçekçi grafikler, etkileyici hikayeler ve sürükleyici atmosferler ile oyunculara benzersiz deneyimler sunmayı hedefliyoruz.</p>
         </div>
     </section>
-    <section class="about" id="hakkimizda">
-        <h2>Hakkımızda</h2>
-        <p>Derin Studios, sürükleyici korku oyunları geliştiren yenilikçi bir stüdyodur.</p>
-    </section>
-    <section class="contact" id="iletisim">
+    
+    <section class="contact section" id="iletisim">
         <h2>İletişim</h2>
-        <form>
-            <input type="text" placeholder="Adınız" required>
-            <input type="email" placeholder="E-posta" required>
-            <textarea placeholder="Mesajınız" rows="4" required></textarea>
-            <button type="submit">Gönder</button>
-        </form>
+        <div class="contact-content">
+            <p>Bize ulaşmak için aşağıdaki formu doldurun veya <strong>info@derinstudios.com</strong> adresine e-posta gönderin.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Adınız" required>
+                <input type="email" placeholder="E-posta" required>
+                <textarea placeholder="Mesajınız" rows="4" required></textarea>
+                <button type="submit">Gönder</button>
+            </form>
+        </div>
     </section>
+    
     <footer>© 2025 Derin Studios - Tüm Hakları Saklıdır</footer>
-    <script>
-        document.addEventListener("scroll", function() {
-            document.querySelectorAll(".about, .contact").forEach(section => {
-                if (section.getBoundingClientRect().top < window.innerHeight * 0.75) {
-                    section.classList.add("visible");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
+
