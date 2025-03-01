@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derin Studios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #1e1e1e, #292929);
+            padding: 20px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+        header:hover {
+            background: linear-gradient(135deg, #333, #444);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #222;
+            padding: 15px;
+            box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 80px;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #ff6600;
+            transform: scale(1.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 180px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .game-card {
+            background: #1e1e1e;
+            width: 320px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 25px rgba(255, 165, 0, 0.7);
+        }
+        .game-card img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .game-card img:hover {
+            transform: scale(1.1);
+        }
+        .game-card h3 {
+            margin-top: 15px;
+            font-size: 22px;
+            color: #ff6600;
+            letter-spacing: 1px;
+        }
+        .game-card p {
+            font-size: 14px;
+            color: #cccccc;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        .about, .contact {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+        }
+        .about h2, .contact h2 {
+            font-size: 28px;
+            color: #ff6600;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1e1e1e;
+            margin-top: 40px;
+            font-size: 14px;
+            box-shadow: 0px -4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Parallax background effect */
+        .parallax {
+            background-image: url('background.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            margin-top: 60px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .container {
+                flex-direction: column;
+                margin-top: 100px;
+            }
+            .game-card {
+                width: 100%;
+                max-width: 400px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Derin Studios</header>
+    <nav>
+        <a href="#">Ana Sayfa</a>
+        <a href="#">Oyunlar</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#iletisim">İletişim</a>
+    </nav>
+    
+    <div class="parallax"></div>
+
+    <div class="container">
+        <div class="game-card">
+            <img src="game1.jpg" alt="Oyun 1">
+            <h3>Karanlık Koridor</h3>
+            <p>Psikolojik gerilim ve korku dolu bir atmosfer.</p>
+        </div>
+        <div class="game-card">
+            <img src="game2.jpg" alt="Oyun 2">
+            <h3>Gölge Avcısı</h3>
+            <p>Kayıp ruhları bul ve korkularınla yüzleş.</p>
+        </div>
+        <div class="game-card">
+            <img src="game3.jpg" alt="Oyun 3">
+            <h3>Labirent</h3>
+            <p>Çıkışı bulabilecek misin, yoksa sonsuza kadar kaybolacak mısın?</p>
+        </div>
+    </div>
+    
+    <div class="about" id="hakkimizda">
+        <h2>Hakkımızda</h2>
+        <p>Derin Studios, yenilikçi ve sürükleyici korku oyunları geliştiren bağımsız bir oyun stüdyosudur. Hedefimiz, oyunculara unutulmaz deneyimler sunmak.</p>
+    </div>
+    
+    <div class="contact" id="iletisim">
+        <h2>İletişim</h2>
+        <p>Bize ulaşmak için <strong>info@derinstudios.com</strong> adresine e-posta gönderebilirsiniz.</p>
+    </div>
+
+    <footer>© 2025 Derin Studios - Tüm Hakları Saklıdır</footer>
+</body>
+</html>
