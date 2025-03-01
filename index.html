@@ -52,6 +52,22 @@
             transition: all 0.3s ease-in-out;
             position: relative;
         }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #ff6600;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease-in-out;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        nav a.active::after {
+            width: 100%;
+        }
         nav a:hover {
             color: #ff6600;
         }
@@ -190,7 +206,7 @@
 <body>
     <header>Derin Studios</header>
     <nav>
-        <a href="#">Ana Sayfa</a>
+        <a href="#" class="active">Ana Sayfa</a>
         <a href="#oyunlar">Oyunlar</a>
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#iletisim">İletişim</a>
@@ -233,5 +249,44 @@
     </section>
     
     <footer>© 2025 Derin Studios - Tüm Hakları Saklıdır</footer>
+
+    <script>
+        // Nav linklerine tıklandığında aktif class ekleme
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Sayfa yüklendiğinde aktif linki belirleme
+        window.addEventListener('load', () => {
+            const currentSection = window.location.hash || '#';
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Sayfa scroll edildiğinde aktif linki güncelleme
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}` || (currentSection === '' && link.getAttribute('href') === '#')) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
